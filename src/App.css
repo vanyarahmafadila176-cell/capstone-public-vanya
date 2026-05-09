@@ -45,13 +45,17 @@
 }
 
 .logo {
-  font-size: 40px;
+  font-size: 58px;
   color: #fff2dc;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
   font-family: 'Kaushan Script', cursive;
   line-height: 1;
-}
 
+  font-weight: bold;
+  letter-spacing: 2px;
+
+  margin-bottom: 6px;
+}
 .subtitle {
   color: #fff3e2;
   font-size: 18px;
@@ -153,7 +157,7 @@ h2 {
 }
 
 h3 {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -485,7 +489,7 @@ h3 {
 
   /* TEXT LEBIH BESAR */
   h2 {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   h3 {
@@ -629,5 +633,139 @@ h3 {
 .status-pill.diterima {
   background: #2a9d8f;
   color: white;
+}
+
+/* ================================= */
+/* 🔥 LOGIN & SIGN UP IMPROVEMENT */
+/* ================================= */
+
+/* LOGO ADUIN LEBIH BESAR */
+.login-logo {
+  font-size: 90px !important;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  color: #fff7ef;
+
+  text-shadow:
+    0 6px 18px rgba(0,0,0,0.35);
+}
+
+/* TITLE LOGIN / SIGNUP */
+.login-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffe7cb;
+  margin-bottom: 12px;
+}
+
+/* BUTTON KEMBALI */
+.highlight-back {
+  background: linear-gradient(
+    135deg,
+    #fff5e6 0%,
+    #ffd49c 100%
+  ) !important;
+
+  color: #7a4318 !important;
+
+  padding: 10px 18px !important;
+
+  border-radius: 14px !important;
+
+  font-weight: 700 !important;
+
+  border: 2px solid rgba(255,255,255,0.5);
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.18);
+
+  transition: all 0.2s ease;
+
+  margin-bottom: 10px;
+}
+
+.highlight-back:hover {
+  transform: translateY(-2px);
+
+  background: #fff1dc !important;
+}
+
+/* INPUT LOGIN */
+.screen.center .field {
+  height: 50px;
+
+  border-radius: 14px;
+
+  font-size: 14px;
+
+  background: #f3d4b2;
+
+  border: 1px solid #c58b58;
+}
+
+/* BUTTON LOGIN */
+.screen.center .btn.primary {
+  height: 50px;
+
+  border-radius: 14px;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  background: linear-gradient(
+    180deg,
+    #8d4b1d 0%,
+    #6f350f 100%
+  );
+
+  box-shadow:
+    0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* LINK SIGNUP */
+.link-btn {
+  margin-top: 6px;
+
+  font-size: 13px;
+
+  color: #fff2df;
+
+  text-decoration: underline;
+}
+
+/* SIGNUP EMAIL */
+.email-suffix {
+  min-width: 110px;
+
+  font-weight: 600;
+}
+
+/* ERROR */
+.error-text {
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .login-logo {
+    font-size: 72px !important;
+  }
+
+  .login-title {
+    font-size: 22px;
+  }
+
+  .screen.center .field {
+    height: 46px;
+  }
+
+  .screen.center .btn.primary {
+    height: 46px;
+  }
 }
 

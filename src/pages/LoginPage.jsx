@@ -1,42 +1,107 @@
 import { useState } from 'react'
 
 function LoginPage({ onSubmit, onSignup, onBack }) {
+
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    onSubmit({ username: username.trim(), password })
+
+    // VALIDASI EMAIL
+    if (
+      username.includes('@') ||
+      username.includes('gmail.com')
+    ) {
+      alert('Gunakan username, bukan email')
+      return
+    }
+
+    // LOGIN
+    onSubmit({
+      username: username.trim(),
+      password,
+    })
   }
 
   return (
-    <form className="screen center" onSubmit={handleSubmit}>
-      <button className="back-link" type="button" onClick={onBack}>
-        {'<'} Kembali
+    <form
+      className="screen center"
+      onSubmit={handleSubmit}
+    >
+
+      {/* BUTTON KEMBALI */}
+      <button
+        className="back-link highlight-back"
+        type="button"
+        onClick={onBack}
+      >
+        ← Kembali
       </button>
-      <div className="logo">ADUIN</div>
-      <h2>Login</h2>
+
+      {/* LOGO */}
+      <div className="logo login-logo">
+        ADUIN
+      </div>
+
+      {/* TITLE */}
+      <h2 className="login-title">
+        Login
+      </h2>
+
+      {/* USERNAME */}
       <input
         className="field"
+        type="text"
         placeholder="Masukkan username"
         value={username}
-        onChange={(event) => setUsername(event.target.value)}
+        onChange={(event) => {
+
+          let value = event.target.value
+
+          // HAPUS @
+          value = value.replace(/@/g, '')
+
+          // HAPUS gmail.com
+          value = value.replace(/gmail\.com/g, '')
+
+          // HAPUS SPASI
+          value = value.replace(/\s/g, '')
+
+          setUsername(value)
+        }}
         required
       />
+
+      {/* PASSWORD */}
       <input
         className="field"
         type="password"
         placeholder="Masukkan password"
         value={password}
-        onChange={(event) => setPassword(event.target.value)}
+        onChange={(event) =>
+          setPassword(event.target.value)
+        }
         required
       />
-      <button className="btn primary" type="submit">
-        Login
+
+      {/* BUTTON LOGIN */}
+      <button
+        className="btn primary full"
+        type="submit"
+      >
+        Masuk
       </button>
-      <button className="link-btn" type="button" onClick={onSignup}>
+
+      {/* SIGN UP */}
+      <button
+        className="link-btn"
+        type="button"
+        onClick={onSignup}
+      >
         Belum punya akun? Sign up
       </button>
+
     </form>
   )
 }
